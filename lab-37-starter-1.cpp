@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+int sum_ascii(string);
 
 int main() {
     char a = 'A';
@@ -10,8 +11,19 @@ int main() {
     cout << b << endl;
     cout << (char) b << endl;
     
+    string strTest = "ABC";
+    int result = sum_ascii(strTest);
+    cout << "Sum of ASCII values for " << strTest << ": " << result << endl;
 
     return 0;
+}
+
+int sum_ascii(string s) {
+    int sum = 0;
+    for (int i = 0; i < s.length(); i++) {
+        sum += (int) s[i];
+    }   
+    return sum;
 }
 
 /* 
