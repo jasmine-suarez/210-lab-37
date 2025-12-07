@@ -11,7 +11,7 @@ int main() {
     cout << b << endl;
     cout << (char) b << endl;
     
-    string strTest = "ABC";
+    string strTest = "ABC123";
     int result = sum_ascii(strTest);
     cout << "Sum of ASCII values for " << strTest << ": " << result << endl;
 
