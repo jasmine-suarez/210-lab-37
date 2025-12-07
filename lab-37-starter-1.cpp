@@ -35,7 +35,7 @@ int main() {
 
     int count = 0;
 
-    // display the firs 100 map entries
+    // display the first 100 map entries
     for(map<int, list<string>>::iterator it = hash_table.begin(); 
         it != hash_table.end() && count < 100; ++it, ++count) {
 
