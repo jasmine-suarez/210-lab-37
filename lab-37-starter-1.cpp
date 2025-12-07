@@ -65,13 +65,12 @@ int main() {
                         if (s == key) {
                             found = true;
                             cout << "Key found: " << s << endl;
-                            break;
                         }
                     }
                 }
-                else {
+                else
                     cout << "Key not found.\n";
-                }
+
                 break;
             }
 
@@ -91,7 +90,15 @@ int main() {
                 cout << "Enter key to remove: ";
                 cin >> key;
                 int index = gen_hash_index(key);
-        
+
+                for (auto it = hash_table[index].begin(); it != hash_table[index].end(); ++it) {
+                    if (*it == key) {
+                        hash_table[index].erase(it);
+                        cout << "Key removed: " << key << endl;
+                        break;
+                    }
+                }
+                break;
             }
 
             case 5: {
