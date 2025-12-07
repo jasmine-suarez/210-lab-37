@@ -18,7 +18,6 @@ int main() {
 
     map<int, list<string>> hash_table;
     
-    int total = 0;
     string line;
 
     // Open/read the file
@@ -34,9 +33,14 @@ int main() {
     else
         cout << "File not found.\n";
 
-    cout << "Total sum of ASCII values: " << total << endl;
+    int count = 0;
 
+    // display the firs 100 map entries
+    for(map<int, list<string>>::iterator it = hash_table.begin();
+        it != hash_table.end() && count < 100; ++it, ++count) {
+        
     return 0;
+    }
 }
 
 int gen_hash_index(string s) {
