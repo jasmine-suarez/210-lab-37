@@ -7,15 +7,6 @@ using namespace std;
 int gen_hash_index(string);
 
 int main() {
-    /*
-    char a = 'A';
-    cout << a << endl;
-    cout << (int) a << endl;
-    int b = 66;
-    cout << b << endl;
-    cout << (char) b << endl;
-    */
-
     map<int, list<string>> hash_table;
     
     string line;
@@ -33,18 +24,36 @@ int main() {
     else
         cout << "File not found.\n";
 
-    int count = 0;
+    // interactive menu
+    int choice;
+    do {
+        cout << "\nMain Menu:\n";
+        cout << "[1] Print the first 100 entries\n";
+        cout << "[2] Search for a key\n";
+        cout << "[3] Add a key\n";
+        cout << "[4] Remove a key\n";
+        cout << "[5] Modify a key\n";
+        cout << "[0] Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+        cin.ignore();
 
-    // display the first 100 map entries
-    for(map<int, list<string>>::iterator it = hash_table.begin(); 
-        it != hash_table.end() && count < 100; ++it, ++count) {
+        switch (choice) {
+            case 1:
+                // display the first 100 map entries
+                int count = 0;
+                for(map<int, list<string>>::iterator it = hash_table.begin(); 
+                    it != hash_table.end() && count < 100; ++it, ++count) {
 
-            cout << "Index: " << it->first << endl;
-            for (string s : it->second) {
-                cout << "  " << s << endl;
-            }
+                    cout << "Index: " << it->first << endl;
+                    for (string s : it->second) {
+                    cout << "  " << s << endl;
+                    }
+                }
+                break;            
+
+        } while (choice != 0);
     }
-
     return 0;
 }
 
