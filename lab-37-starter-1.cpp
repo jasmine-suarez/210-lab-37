@@ -1,8 +1,10 @@
 #include <iostream>
 #include <fstream>
+#include <map>
+#include <list>
 using namespace std;
 
-int sum_ascii(string);
+int gen_hash_index(string);
 
 int main() {
     char a = 'A';
@@ -19,7 +21,7 @@ int main() {
     if (fin.good()) {
         string line;
         while (fin >> line)
-            total += sum_ascii(line);
+            total += gen_hash_index(line);
         fin.close();
     }
     else
@@ -30,7 +32,7 @@ int main() {
     return 0;
 }
 
-int sum_ascii(string s) {
+int gen_hash_index(string s) {
     int sum = 0;
     for (int i = 0; i < s.length(); i++) {
         sum += (int) s[i];
