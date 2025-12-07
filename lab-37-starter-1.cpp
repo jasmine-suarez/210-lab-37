@@ -64,6 +64,7 @@ int main() {
                     for (string s : hash_table[index]) {
                         if (s == key) {
                             found = true;
+                            cout << "Key found: " << s << endl;
                             break;
                         }
                     }
@@ -90,7 +91,12 @@ int main() {
                 cout << "Enter key to remove: ";
                 cin >> key;
                 int index = gen_hash_index(key);
-                
+        
+            }
+
+            case 5: {
+                // modify key
+                string old_key, new_key;
             }
                         
         }
