@@ -50,10 +50,36 @@ int main() {
                     cout << "  " << s << endl;
                     }
                 }
-                break;            
+                break;
+            
+            case 2:
+                // search for key
+                string key;
+                cout << "Enter key to search: ";
+                cin >> key;
+                int index = gen_hash_index(key);
+                if (hash_table.find(index) != hash_table.end()) {
+                    bool found = false;
+                    for (string s : hash_table[index]) {
+                        if (s == key) {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                else {
+                    cout << "Key not found.\n";
+                }
+                break;
 
-        } while (choice != 0);
-    }
+            case 3:
+                // add key
+                cout << "Enter key to add: ";
+                
+                        
+        }
+    } while (choice != 0);
+
     return 0;
 }
 
