@@ -116,11 +116,10 @@ int main() {
                 for (auto it = hash_table[index].begin(); it != hash_table[index].end(); ++it) {
                     if (*it == old_key) {
                         *it = new_key;
-                        cout << "";
+                        cout << "Key " << old_key << " updated to " << new_key << endl;
                     }
                 }
-
-
+                break;
             }
 
             case 0:
