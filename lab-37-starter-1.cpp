@@ -65,7 +65,11 @@ int main() {
                         if (s == key) {
                             found = true;
                             cout << "Key found: " << s << endl;
+                            break;
                         }
+                    }
+                    if (!found) {
+                        cout << "Key not found.\n";
                     }
                 }
                 else
