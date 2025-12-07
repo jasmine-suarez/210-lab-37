@@ -39,7 +39,7 @@ int main() {
         cin.ignore();
 
         switch (choice) {
-            case 1:
+            case 1: {
                 // display the first 100 map entries
                 int count = 0;
                 for(map<int, list<string>>::iterator it = hash_table.begin(); 
@@ -51,8 +51,9 @@ int main() {
                     }
                 }
                 break;
-            
-            case 2:
+            }
+
+            case 2: {
                 // search for key
                 string key;
                 cout << "Enter key to search: ";
@@ -71,11 +72,26 @@ int main() {
                     cout << "Key not found.\n";
                 }
                 break;
+            }
 
-            case 3:
+            case 3: {
                 // add key
+                string key;
                 cout << "Enter key to add: ";
+                cin >> key;
+                int index = gen_hash_index(key);
+                hash_table[index].push_back(key);
+                break;
+            }
+
+            case 4: {
+                // remove key
+                string key;
+                cout << "Enter key to remove: ";
+                cin >> key;
+                int index = gen_hash_index(key);
                 
+            }
                         
         }
     } while (choice != 0);
