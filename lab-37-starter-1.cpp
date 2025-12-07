@@ -108,6 +108,19 @@ int main() {
             case 5: {
                 // modify key
                 string old_key, new_key;
+                cout << "Enter key to modify: ";
+                cin >> old_key;
+                cout << "Enter new key value: ";
+                cin >> new_key;
+                int index = gen_hash_index(old_key);
+                for (auto it = hash_table[index].begin(); it != hash_table[index].end(); ++it) {
+                    if (*it == old_key) {
+                        *it = new_key;
+                        cout << "";
+                    }
+                }
+
+
             }
 
             case 0:
