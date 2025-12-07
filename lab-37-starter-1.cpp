@@ -36,12 +36,18 @@ int main() {
     int count = 0;
 
     // display the firs 100 map entries
-    for(map<int, list<string>>::iterator it = hash_table.begin();
+    for(map<int, list<string>>::iterator it = hash_table.begin(); 
         it != hash_table.end() && count < 100; ++it, ++count) {
-        
-    return 0;
+
+            cout << "Index: " << it->first << endl;
+            for (string s : it->second) {
+                cout << "  " << s << endl;
+            }
     }
+
+    return 0;
 }
+
 
 int gen_hash_index(string s) {
     int sum = 0;
