@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 int sum_ascii(string);
@@ -11,9 +12,20 @@ int main() {
     cout << b << endl;
     cout << (char) b << endl;
     
-    string strTest = "ABC123";
-    int result = sum_ascii(strTest);
-    cout << "Sum of ASCII values for " << strTest << ": " << result << endl;
+    int total = 0;
+
+    ifstream fin;
+    fin.open("lab-37-data-3.txt");
+    if (fin.good()) {
+        string line;
+        while (fin >> line)
+            total += sum_ascii(line);
+        fin.close();
+    }
+    else
+        cout << "File not found.\n";
+
+    cout << "Total sum of ASCII values: " << total << endl;
 
     return 0;
 }
