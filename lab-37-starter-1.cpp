@@ -7,21 +7,28 @@ using namespace std;
 int gen_hash_index(string);
 
 int main() {
+    /*
     char a = 'A';
     cout << a << endl;
     cout << (int) a << endl;
     int b = 66;
     cout << b << endl;
     cout << (char) b << endl;
+    */
+
+    map<int, list<string>> hash_table;
     
     int total = 0;
+    string line;
 
+    // Open/read the file
     ifstream fin;
     fin.open("lab-37-data-3.txt");
     if (fin.good()) {
-        string line;
-        while (fin >> line)
-            total += gen_hash_index(line);
+        while (fin >> line) {
+            int index = gen_hash_index(line);
+            hash_table[index].push_back(line);
+        }
         fin.close();
     }
     else
