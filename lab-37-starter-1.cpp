@@ -98,6 +98,14 @@ int main() {
                 // modify key
                 string old_key, new_key;
             }
+
+            case 0:
+                cout << "Exiting program.\n";
+                break;
+
+            default:
+                cout << "Invalid choice. Enter number 0-5.\n";
+                break;
                         
         }
     } while (choice != 0);
